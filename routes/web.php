@@ -80,3 +80,17 @@ Route::resource('/photos', PhotoController::class)->only([
     'create','store', 'update', 'destroy'
 ]);
 
+
+//Creating a View
+Route::get('/greeting', function () {
+    return view ('hello', ['name' => 'Shofa']);
+});
+
+//View in directory
+Route::get('/greeting', function () {
+    return view ('blog.hello', ['name' => 'Shofa']);
+});
+
+//Displaying a View from a Controller
+Route::get('/greeting', [WelcomeController::class,'greeting']);
+
